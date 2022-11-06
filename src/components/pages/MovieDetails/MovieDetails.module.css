@@ -1,0 +1,14 @@
+.imageBox {
+  display: inline-flex;
+  width: auto;
+}
+
+.imageCard {
+  display: block;
+  padding: 30px;
+}
+.sectionFilm {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid;
+}

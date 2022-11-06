@@ -1,0 +1,19 @@
+.header {
+  padding: 8px;
+  border-bottom: 1px solid black;
+}
+
+.link {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: rgb(243, 51, 147);
+}
+
+.active a {
+  color: rgb(243, 51, 147);
+}

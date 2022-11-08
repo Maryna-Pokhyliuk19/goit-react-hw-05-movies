@@ -1,6 +1,7 @@
 import { getTrending } from 'components/services/api';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import css from './Home.module.css';
 
 export const Home = () => {
   const [films, setFilms] = useState([]);
@@ -16,11 +17,13 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Trending</h1>
+      <h1>Trending today</h1>
       <ul>
         {films.map(({ id, original_title }) => (
           <li key={id}>
-            <NavLink to={`movies/${id}`}>{original_title}</NavLink>
+            <NavLink className={css.trendLink} to={`movies/${id}`}>
+              {original_title}
+            </NavLink>
           </li>
         ))}
       </ul>

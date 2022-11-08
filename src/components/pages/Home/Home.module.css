@@ -1,0 +1,7 @@
+.trendLink {
+  color: blue;
+}
+
+.trendLink:active {
+  color: pink;
+}

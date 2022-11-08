@@ -1,9 +1,10 @@
 import { getMovieById } from 'components/services/api';
 import { BackLink } from 'components/BackLink/BackLink';
+import { Link } from 'react-router-dom';
 
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import css from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
@@ -20,6 +21,7 @@ export const MovieDetails = () => {
       } catch (error) {}
     })();
   }, [movieId]);
+
   if (!movie) {
     return null;
   }
@@ -33,10 +35,10 @@ export const MovieDetails = () => {
   } = movie;
 
   const genresNames = genres.map(genre => genre.name).join(', ');
-  console.log(genresNames);
+
   return (
     <>
-      {/* <BackLink to={backLinkHref}>Back to home</BackLink> */}
+      <BackLink to={backLinkHref}>Go back</BackLink>
       <div className={css.sectionFilm}>
         <div className={css.imageBox}>
           <img
@@ -54,6 +56,22 @@ export const MovieDetails = () => {
           <h4>Genres</h4>
           <p>{genresNames}</p>
         </div>
+      </div>
+      <div>
+        <h3>Additional information</h3>
+        <ul className={css.additional}>
+          <li>
+            <Link className={css.additionalLink} to="cast">
+              Cast
+            </Link>
+          </li>
+          <li>
+            <Link className={css.additionalLink} to="reviews">
+              Reviews
+            </Link>
+          </li>
+        </ul>
+        <Outlet />
       </div>
     </>
   );

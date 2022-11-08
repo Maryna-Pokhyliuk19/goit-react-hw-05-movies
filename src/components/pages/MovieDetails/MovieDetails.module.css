@@ -12,3 +12,11 @@
   padding: 20px;
   border-bottom: 1px solid;
 }
+
+.additionalLink {
+  color: blue;
+}
+
+.additionalLink:active {
+  color: pink;
+}

@@ -5,10 +5,10 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <nav className={css.navigation}>
-        <NavLink className={`${css.link} `} to="/">
+        <NavLink className={`${css.link} ${css.active}`} to="/">
           Home
         </NavLink>
-        <NavLink className={css.link} to="movies">
+        <NavLink className={`${css.link}`} to="movies">
           Movies
         </NavLink>
       </nav>

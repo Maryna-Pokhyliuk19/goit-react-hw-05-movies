@@ -20,10 +20,11 @@ export const SearchBar = ({ onSubmit }) => {
         className={css.formInput}
         type="text"
         placeholder="Enter film..."
+        value={search}
         onChange={handleNameChange}
       />
       <button className={css.formButton} type="submit" label>
-        search
+        Search
       </button>
     </form>
   );

@@ -5,10 +5,16 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <nav className={css.navigation}>
-        <NavLink className={`${css.link} ${css.active}`} to="/">
+        <NavLink
+          className={({ isActive }) => (isActive ? css.active : css.link)}
+          to="/"
+        >
           Home
         </NavLink>
-        <NavLink className={`${css.link}`} to="movies">
+        <NavLink
+          className={({ isActive }) => (isActive ? css.active : css.link)}
+          to="movies"
+        >
           Movies
         </NavLink>
       </nav>

@@ -2,7 +2,7 @@ import { getMovieById } from 'components/services/api';
 import { BackLink } from 'components/BackLink/BackLink';
 import { Link } from 'react-router-dom';
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useState } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import css from './MovieDetails.module.css';
@@ -71,7 +71,10 @@ export const MovieDetails = () => {
             </Link>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<div>Loading subpage...</div>}>
+          <Outlet />
+        </Suspense>
+        {/* <Outlet /> */}
       </div>
     </>
   );

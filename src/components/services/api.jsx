@@ -46,7 +46,7 @@ export const getReviewsById = async movie_id => {
   return response.data.results;
 };
 
-export const searchMovie = async query => {
+export const searchMovies = async query => {
   const options = {
     params: {
       api_key: API_KEY,

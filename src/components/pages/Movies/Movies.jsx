@@ -28,7 +28,7 @@ export const Movies = () => {
         setMovies(oneMovie);
       } catch (error) {}
     })();
-  }, [query]);
+  }, [query, search]);
 
   return (
     <>

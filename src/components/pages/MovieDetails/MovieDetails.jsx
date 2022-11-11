@@ -74,8 +74,9 @@ export const MovieDetails = () => {
         <Suspense fallback={<div>Loading subpage...</div>}>
           <Outlet />
         </Suspense>
-        {/* <Outlet /> */}
       </div>
     </>
   );
 };
+
+export default MovieDetails;

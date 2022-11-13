@@ -23,7 +23,7 @@ export const SearchBar = ({ onSubmit }) => {
         value={search}
         onChange={handleNameChange}
       />
-      <button className={css.formButton} type="submit" label>
+      <button className={css.formButton} type="submit">
         Search
       </button>
     </form>

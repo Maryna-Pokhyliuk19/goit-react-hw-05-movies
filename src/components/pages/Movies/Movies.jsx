@@ -11,24 +11,24 @@ export const Movies = () => {
   const location = useLocation();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
+  const filter = searchParams.get('query') ?? '';
 
-  const handleFormSubmit = search => {
-    setSearch(search);
+  const handleFormSubmit = query => {
+    setSearch(query);
     setSearchParams(query !== '' ? { query } : {});
   };
 
   useEffect(() => {
-    if (!query && !search) {
+    if (!filter && !search) {
       return;
     }
     (async function searchMovie() {
       try {
-        const oneMovie = await searchMovies(search);
+        const oneMovie = await searchMovies(filter ? filter : search);
         setMovies(oneMovie);
       } catch (error) {}
     })();
-  }, [query, search]);
+  }, [filter, search]);
 
   return (
     <>
@@ -39,7 +39,7 @@ export const Movies = () => {
             <NavLink
               className={css.moviesLink}
               to={`${id}`}
-              state={{ home: location }}
+              state={{ from: location }}
             >
               {original_title}
             </NavLink>

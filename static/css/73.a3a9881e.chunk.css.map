@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/73.a3a9881e.chunk.css","mappings":"AAAA,uBACE,UACF,CAEA,8BACE,UACF","sources":["components/pages/Home/Home.module.css"],"sourcesContent":[".trendLink {\n  color: blue;\n}\n\n.trendLink:active {\n  color: pink;\n}\n"],"names":[],"sourceRoot":""}

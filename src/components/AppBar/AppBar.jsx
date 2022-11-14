@@ -13,7 +13,7 @@ export const AppBar = () => {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? css.active : css.link)}
-          to="movies"
+          to="/movies"
         >
           Movies
         </NavLink>

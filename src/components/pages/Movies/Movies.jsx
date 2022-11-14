@@ -39,7 +39,7 @@ export const Movies = () => {
             <NavLink
               className={css.moviesLink}
               to={`${id}`}
-              state={{ from: location }}
+              state={{ home: location }}
             >
               {original_title}
             </NavLink>

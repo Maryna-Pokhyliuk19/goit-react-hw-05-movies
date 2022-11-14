@@ -2,7 +2,7 @@ import { getMovieById } from 'components/services/api';
 import { BackLink } from 'components/BackLink/BackLink';
 import { Link } from 'react-router-dom';
 
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import css from './MovieDetails.module.css';
@@ -11,7 +11,8 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+
+  const whereIs = useRef(location);
 
   useEffect(() => {
     (async function getMovie() {
@@ -38,7 +39,7 @@ export const MovieDetails = () => {
 
   return (
     <>
-      <BackLink to={backLinkHref}>Go back</BackLink>
+      <BackLink to={whereIs.current.state?.home ?? '/'}>Go back</BackLink>
       <div className={css.sectionFilm}>
         <div className={css.imageBox}>
           <img
